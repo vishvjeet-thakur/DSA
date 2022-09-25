@@ -262,7 +262,7 @@ int main()
     sharma.deleteFromHead(2);
     sharma.displayFromHead();
     sharma.displayFromTail();
-    sharma.popTail(
+   
     cout<<endl<<sharma.popTail()->name;
     sharma.displayFromTail();
     return 0;
