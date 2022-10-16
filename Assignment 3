@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+//using binary search for searching in the array
+
+int Search(int arr[],int x, int low, int high)
+{
+	if(low > high)
+		return -1;
+
+	int mid = (low + high) / 2;
+
+	if(arr[mid] == x)
+		return mid;
+
+	else if(arr[mid] > x)
+		return Search(arr,x, low, mid - 1);
+
+	else
+		return Search(arr, x,mid + 1, high);
+}
+
+
+int start(int arr[], int x)
+{
+    if(arr[0] == x) return 0;
+
+	int i = 1;
+
+	while(arr[i] < x)
+		i = i * 2;
+
+	if(arr[i] == x) return i;
+
+
+	return Search(arr,x, i / 2 + 1, i - 1);
+}
+
+int main() {
+    
+
+   int arr[] = {1, 5,7,9};
+
+	int x = 7;
+
+	cout << start(arr, x);
+
+	return 0;
+}
