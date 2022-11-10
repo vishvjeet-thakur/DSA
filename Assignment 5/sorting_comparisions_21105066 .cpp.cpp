@@ -43,7 +43,7 @@ void Selection_Sort(int arr[],int size)
 int comparision=0;
     for(int i=0;i<size-1;i++)
     {
-    int index_min=0;
+    int index_min=i;
         for (int j=i+1;j<size;j++)
         {
             if(arr[j]<arr[index_min])
@@ -51,7 +51,7 @@ int comparision=0;
                comparision++;
                }
         }
-        if(index_min!=min)
+        if(index_min!=i)
         {
             int temp=arr[i];
             arr[i]=arr[index_min];
@@ -90,7 +90,7 @@ int main(){
     print(arr1,n);
     cout<<endl;
     cout<<"SELECTION SORT"<<endl;
-    selection_sort(arr2,n);
+    Selection_Sort(arr2,n);
     cout<<" . ARRAY After Sorting Using Selection Sorting:";
     print(arr2,n);
 }
